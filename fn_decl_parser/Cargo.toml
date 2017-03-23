@@ -1,9 +1,6 @@
 [package]
-name = "fuxor"
+name = "fn_decl_parser"
 version = "0.1.0"
 authors = ["Dan Glastonbury <dglastonbury@mozilla.com>"]
 
 [dependencies]
-argparse = "*"
-fn_decl_parser = { path = "fn_decl_parser" }
-itertools = "*"
