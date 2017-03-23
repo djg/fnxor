@@ -1,0 +1,8 @@
+[package]
+name = "fuxor"
+version = "0.1.0"
+authors = ["Dan Glastonbury <dglastonbury@mozilla.com>"]
+
+[dependencies]
+argparse = "*"
+itertools = "*"
