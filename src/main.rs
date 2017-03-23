@@ -105,7 +105,10 @@ fn write_dynamic_traits(decls: &Vec<FnDecl>) {
         format_ret(&decl.ret, &mut ret);
         format_call(&decl.args, &mut call);
         
-        println!("  #[inline]\n  fn {}({}){} {{\n    (self.{})({})\n  }}",
+        println!(r#"  #[inline]
+  fn {}({}){} {{
+    (self.{})({})
+  }}"#,
                  decl.name, args, ret, decl.name, call);
     }
     
@@ -136,7 +139,10 @@ fn write_static_traits(decls: &Vec<FnDecl>) {
         format_ret(&decl.ret, &mut ret);
         format_call(&decl.args, &mut call);
         
-        println!("  #[inline]\n  fn {}({}){} {{\n    unsafe {{ {}({}) }}\n  }}",
+        println!(r#"  #[inline]
+  fn {}({}){} {{
+    unsafe {{ {}({}) }}
+  }}"#,
                  decl.name, args, ret, decl.name, call);
     }
 
@@ -200,5 +206,3 @@ fn main() {
 
     process(source.as_str());
 }
-
-
