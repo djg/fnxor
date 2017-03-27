@@ -26,7 +26,8 @@ macro_rules! t {
 }
 
 impl<'a> FnDeclIterator<'a> {
-    pub fn new(src: &'a str) -> FnDeclIterator<'a> {
+    pub fn new(src: &'a str) -> FnDeclIterator<'a>
+    {
         let mut it = FnDeclIterator {
             next_tok: None,
             tokenizer: Tokenizer::new(src)
